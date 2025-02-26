@@ -1,3 +1,42 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector('.whatsapp-btn');
+
+  if (btn) {
+    btn.addEventListener('click', function (event) {
+      event.preventDefault(); // Evita que el navegador siga el enlace `href`
+      const phone = '56935215898'; // Número de teléfono
+      const message = 'Hola, estoy interesado en más información.';
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+    });
+  } else {
+    console.error("No se encontró el botón de WhatsApp en el DOM.");
+  }
+});
+
+// Obtén el botón de "Subir"
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Cuando el usuario haga scroll hacia abajo, muestra el botón
+window.onscroll = function () {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    scrollToTopBtn.style.display = "flex"; // Muestra el botón
+  } else {
+    scrollToTopBtn.style.display = "none"; // Oculta el botón
+  }
+};
+
+// Cuando el usuario haga clic en el botón, realiza el desplazamiento suave
+scrollToTopBtn.addEventListener("click", function (event) {
+  event.preventDefault(); // Evita la acción predeterminada de ancla
+
+  // Desplazamiento suave hasta la parte superior
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Añade la transición suave
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const titulos = document.querySelectorAll(".titulo-animado");
 
@@ -76,33 +115,3 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.counter-box').forEach(counterBox => observer.observe(counterBox));
 
 
-// main.js
-document.querySelector('.whatsapp-btn').addEventListener('click', function() {
-  const phone = '56955310518'; // Número de teléfono
-  const message = 'Hola, estoy interesado en más información.'; // Mensaje predefinido
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
-});
-
-
-// Obtén el botón de "Subir"
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-// Cuando el usuario haga scroll hacia abajo, muestra el botón
-window.onscroll = function () {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    scrollToTopBtn.style.display = "flex"; // Muestra el botón
-  } else {
-    scrollToTopBtn.style.display = "none"; // Oculta el botón
-  }
-};
-
-// Cuando el usuario haga clic en el botón, realiza el desplazamiento suave
-scrollToTopBtn.addEventListener("click", function (event) {
-  event.preventDefault(); // Evita la acción predeterminada de ancla
-
-  // Desplazamiento suave hasta la parte superior
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Añade la transición suave
-  });
-});
