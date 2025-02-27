@@ -337,7 +337,10 @@ html, body {
   transform: scale(1.05); /* Pequeño efecto de agrandamiento */
 }
 
-
+a {
+  text-decoration: underline;
+  text-decoration-color: white; /* Cambia el color de la línea (subrayado) */
+}
 
 
 
