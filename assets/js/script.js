@@ -115,3 +115,39 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.counter-box').forEach(counterBox => observer.observe(counterBox));
 
 
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("popupModal");
+  const openBtn = document.getElementById("openPopup");
+  const closeBtn = document.getElementById("closePopup");
+  const closeSpan = document.querySelector(".close-btn");
+
+  // 🚀 Hacer que el pop-up aparezca automáticamente al cargar la página
+  setTimeout(() => {
+    popup.style.display = "flex";
+  }, 2000); // Espera 2 segundos antes de mostrarlo (puedes cambiar el tiempo)
+
+  // Abrir el pop-up con el botón (opcional, sigue funcionando)
+  openBtn.addEventListener("click", () => {
+    popup.style.display = "flex";
+  });
+
+  // Cerrar el pop-up con el botón
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Cerrar el pop-up con la "X"
+  closeSpan.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Cerrar el pop-up al hacer clic fuera de él
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+});
