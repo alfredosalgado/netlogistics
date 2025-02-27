@@ -55,7 +55,7 @@
 
 .logoanimacion {
   opacity: 0; /* Oculto al inicio */
-  transform: translateY(0); /* Asegurar que esté en su posición inicial */
+  transform: translateY(-10); /* Asegurar que esté en su posición inicial */
   transition: transform 0.6s ease; /* Mantiene la transición para hover */
 }
 
@@ -386,7 +386,7 @@ body {
   max-width: 500px;
   text-align: center;
   position: relative;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn2 0.5s ease-in-out;
 }
 
 /* Estilos del botón de cierre */
@@ -418,7 +418,7 @@ body {
 }
 
 /* Animación de aparición */
-@keyframes fadeIn {
+@keyframes fadeIn2 {
   from {
     opacity: 0;
     transform: translateY(-20px);
