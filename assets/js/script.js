@@ -85,10 +85,10 @@ function animateCounter(counter) {
     count += increment;
 
     if (count < target) {
-      counter.textContent = isMoney ? `+ ${Math.floor(count).toLocaleString()}` : Math.floor(count);
+      counter.textContent = isMoney ? `+ ${Math.floor(count).toLocaleString('es-CL')}` : Math.floor(count).toLocaleString('es-CL');
       requestAnimationFrame(updateCounter);
     } else {
-      counter.textContent = isMoney ? `+ ${target.toLocaleString()}` : target;
+      counter.textContent = isMoney ? `+ ${target.toLocaleString('es-CL')}` : target.toLocaleString('es-CL');
     }
   };
 
