@@ -338,7 +338,7 @@ html, body {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: white; /* Cambia el color de la línea (subrayado) */
 }
 
